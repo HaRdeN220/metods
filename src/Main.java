@@ -14,7 +14,9 @@ public class Main {
 
     public static void checkVersionDevice(int clientOS, int clientDeviceYear) {
         int currentYear = LocalDate.now().getYear();
-        if (clientOS == 0 && clientDeviceYear < currentYear) {
+        if (clientDeviceYear < 2015) {
+            System.out.println("Устройство выпущено раньше 2015 года для него приложения не существует");
+        } else if (clientOS == 0 && clientDeviceYear < currentYear) {
             System.out.println("Установите облегченную версию приложения для iOS по ссылке");
         } else if (clientOS == 0) {
             System.out.println("Установите версию приложения для iOS по ссылке");
@@ -43,8 +45,8 @@ public class Main {
         System.out.println("Задача №1");
         checkLeapYear(2020);
         System.out.println("Задача №2");
-        checkVersionDevice(1, 2020);
+        checkVersionDevice(0, 2015);
         System.out.println("Задача №3");
-        System.out.println(deliveryDayInformation(111));
+        System.out.println(deliveryDayInformation(76));
     }
 }
